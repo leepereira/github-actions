@@ -15,6 +15,6 @@ jobs:
           push: false
           tags: my-registry/sample-app:latest
       - name: Deploy to Kubernetes
-        uses: steebchen/kubectl@v1
+        uses: steebchen/kubectl-action@1.0.0
         with:
           args: set image deployment/sample-app sample-app=my-registry/sample-app:latest
