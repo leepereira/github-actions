@@ -12,7 +12,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: .
-          push: false
+          push: true
           tags: my-registry/sample-app:latest
       # - name: Deploy to Kubernetes
       #   uses: steebchen/kubectl-action@1.0.0
