@@ -39,9 +39,12 @@ jobs:
   login:
     runs-on: ubuntu-latest
     steps:
-      -
-        name: Login to Docker Hub1
+      - name: Echo Docker Hub credentials
+        run: |
+          echo "DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}"
+          echo "DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}"
+      - name: Login to Docker Hub
         uses: docker/login-action@v2
         with:
-          username: ${{ secrets.DOCKER_PASSWORD }}
-          password: ${{ secrets.DOCKER_USERNAME }}
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
