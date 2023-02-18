@@ -27,7 +27,6 @@
       #     args: set image deployment/sample-app sample-app=my-registry/sample-app:latest
 
 
-
 name: ci
 
 on:
@@ -41,13 +40,17 @@ jobs:
       DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
       DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
     steps:
+      - name: Encode Docker Hub credentials
+        run: |
+          echo $DOCKER_USERNAME | base64 --decode > docker-username.txt
+          echo $DOCKER_PASSWORD | base64 --decode > docker-password.txt
       - name: Echo Docker Hub credentials
         run: |
-          echo "DOCKER_USERNAME: $DOCKER_USERNAME"
-          echo "DOCKER_PASSWORD: $DOCKER_PASSWORD"
+          echo "DOCKER_USERNAME: $(cat docker-username.txt)"
+          echo "DOCKER_PASSWORD: $(cat docker-password.txt)"
       - name: Login to Docker Hub
         uses: docker/login-action@v2
         with:
-          username: ${{ env.DOCKER_USERNAME }}
-          password: ${{ env.DOCKER_PASSWORD }}
+          username: $(cat docker-username.txt)
+          password: $(cat docker-password.txt)
 
