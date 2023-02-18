@@ -14,7 +14,7 @@ jobs:
           context: .
           push: false
           tags: my-registry/sample-app:latest
-      - name: Deploy to Kubernetes1
-        uses: appleboy/kubectl-action@v1
+      - name: Deploy to Kubernetes
+        uses: appsteebchen/leboy/kubectl-action@v1
         with:
           args: set image deployment/sample-app sample-app=my-registry/sample-app:latest
