@@ -24,7 +24,7 @@ jobs:
           tags: leepereira/hayden:latest
           platform: linux/arm64
 
-  auth to kubernetes:
+  auth_to_kubernetes:
     needs: [login]
     runs-on: ubuntu-latest
     steps:
