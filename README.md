@@ -16,10 +16,10 @@ docker pull leepereira/hayden:latest
 
 Run the image locally 
 ```bash
-docker run -p 5000:5000 leepereira/hayden:latest
+docker run -p 8080:8080 leepereira/hayden:latest
 ```
 
-Check the update on the webpage at : http://localhost:5000
+Check the update on the webpage at : http://localhost:8080
 
 Next steps to be tried out would be 
 - Setup a Kubernetes cluster in its context
