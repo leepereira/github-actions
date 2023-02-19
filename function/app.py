@@ -3,7 +3,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello_geek():
-    return '<h1>Now checking with github actions</h2>'
+    return '<h1>This is working flawlessly</h2>'
 
 
 if __name__ == "__main__":
