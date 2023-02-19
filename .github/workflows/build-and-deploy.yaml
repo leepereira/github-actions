@@ -25,7 +25,7 @@ jobs:
           platform: linux/arm64
 
   Authenticate_Azure_K8s:
-    needs: [login]
+    needs: [registry_login]
     runs-on: ubuntu-latest
     steps:
       - name: Azure Login
