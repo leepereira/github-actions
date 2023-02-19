@@ -24,20 +24,22 @@ jobs:
           tags: leepereira/hayden:latest
           platform: linux/arm64
 
-  auth_to_kubernetes:
-    needs: [registry_login]
+  Authenticate_Azure_K8s:
+    needs: [login]
     runs-on: ubuntu-latest
     steps:
       - name: Azure Login
         uses: azure/login@v1
         with:
-          creds: ${{ secrets.AZURE_CREDENTIALS }}
+          username: ${{ secrets.AZURE_USERNAME }}
+          password: ${{ secrets.AZURE_PASSWORD }}
+          tenant: ${{ secrets.AZURE_TENANT }}
 
-      - name: Set Kubectl Context
-        uses: Azure/k8s-set-context@v1
-        with:
-          kubeconfig: ${{ secrets.KUBECONFIG }}
-          context: ${{ secrets.KUBE_CONTEXT }}
+      # - name: Set Kubectl Context
+      #   uses: Azure/k8s-set-context@v1
+      #   with:
+      #     kubeconfig: ${{ secrets.KUBECONFIG }}
+      #     context: ${{ secrets.KUBE_CONTEXT }}
 
-      - name: Verify Connection
-        run: kubectl cluster-info
+      # - name: Verify Connection
+      #   run: kubectl cluster-info
