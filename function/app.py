@@ -3,7 +3,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello_geek():
-    return '<h1>From my other laptop </h2>'
+    return '<h1>From my other laptop and now back to my home machine </h2>'
 
 
 if __name__ == "__main__":
