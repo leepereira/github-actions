@@ -24,6 +24,22 @@ jobs:
           tags: leepereira/hayden:latest
           platform: linux/arm64
 
+  my-job1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install Azure CLI
+        run: |
+          curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+      - name: Check if Azure CLI is installed
+        run: az --version
+
+
+  my-job2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check if Azure CLI is installed
+        run: az --version
+
   Authenticate_Azure_K8s:
     needs: [registry_login]
     runs-on: ubuntu-latest
