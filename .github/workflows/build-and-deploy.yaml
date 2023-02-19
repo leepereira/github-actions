@@ -22,4 +22,5 @@ jobs:
           context: .
           push: true
           tags: leepereira/hayden:latest
+          platform: linux/arm64
 
