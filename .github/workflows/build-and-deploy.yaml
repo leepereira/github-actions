@@ -53,7 +53,7 @@ jobs:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
     
     - run: |
-        az webapp list --query "[?state=='Running']"
+        az storage account list
       
 
   # Authenticate_Azure_K8s:
