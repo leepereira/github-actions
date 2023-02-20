@@ -75,3 +75,17 @@ jobs:
 
       # - name: Verify Connection
       #   run: kubectl cluster-info
+
+
+# {
+#   "clientId": "3b58e861-d5bb-48e9-ba9d-c48d35b25190",
+#   "clientSecret": "Yp28Q~uH9mR6Nt3SsgWEqIBQ5sLhAzFKvNASQddQ",
+#   "subscriptionId": "0f39574d-d756-48cf-b622-0e27a6943bd2",
+#   "tenantId": "3617ef9b-98b4-40d9-ba43-e1ed6709cf0d",
+#   "activeDirectoryEndpointUrl": "https://login.microsoftonline.com",
+#   "resourceManagerEndpointUrl": "https://management.azure.com",
+#   "activeDirectoryGraphResourceId": "https://graph.windows.net",
+#   "sqlManagementEndpointUrl": "https://management.core.windows.net:8443/", 
+#   "galleryEndpointUrl": "https://gallery.azure.com",
+#   "managementEndpointUrl": "https://management.core.windows.net/"
+# }
