@@ -40,16 +40,31 @@ jobs:
       - name: Check if Azure CLI is installed
         run: az --version
 
-  Authenticate_Azure_K8s:
-    needs: [registry_login]
+
+
+
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Azure Login
-        uses: azure/login@v1
-        with:
-          username: ${{ secrets.AZURE_USERNAME }}
-          password: ${{ secrets.AZURE_PASSWORD }}
-          tenant: ${{ secrets.AZURE_TENANT }}
+    
+    - uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+    
+    - run: |
+        az webapp list --query "[?state=='Running']"
+      
+
+  # Authenticate_Azure_K8s:
+  #   needs: [registry_login]
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Azure Login
+  #       uses: azure/login@v1
+  #       with:
+  #         username: ${{ secrets.AZURE_USERNAME }}
+  #         password: ${{ secrets.AZURE_PASSWORD }}
+  #         tenant: ${{ secrets.AZURE_TENANT }}
 
       # - name: Set Kubectl Context
       #   uses: Azure/k8s-set-context@v1
