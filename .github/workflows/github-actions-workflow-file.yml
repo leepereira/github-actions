@@ -48,9 +48,9 @@ jobs:
       
       - run: echo "This job's status is ${{ job.status }}."
 
-  # Second-Job:
-  #   name: The second job running on another runner
-  #   runs-on: windows-latest
-  #   needs: Example-Actions-Job
-  #   steps:
-  #     - run: echo "This job is now running on a ${{ runner.os }} server hosted by GitHub."
+  Second-Job:
+    name: The second job running on another runner
+    runs-on: windows-latest
+    needs: Example-Actions-Job
+    steps:
+      - run: echo "This job is now running on a ${{ runner.os }} server hosted by GitHub."
